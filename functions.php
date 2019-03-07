@@ -307,6 +307,13 @@ add_action('login_head', 'my_custom_login');
 //
 // }
 
+// SVG support for remove_featured_image
+function cc_mime_types($mimes) {
+ $mimes['svg'] = 'image/svg+xml';
+ return $mimes;
+}
+add_filter('upload_mimes', 'cc_mime_types');
+
 // Move Yoast to bottom
 function yoasttobottom() {
 	return 'low';
