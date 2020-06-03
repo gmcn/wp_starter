@@ -31,7 +31,7 @@ window.cookieconsent.initialise({
     }
   },
   "theme": "edgeless",
-  "position": "top",
+  "position": "bottom",
   "static": true,
   "content": {
     "message": "This site uses cookies. By continuing to browse the site, you are agreeing to our use of cookies.",
