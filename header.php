@@ -29,42 +29,30 @@
 	<header>
 
 
-		<nav class="navbar navbar-default navbar-static-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-						<?php $description = get_bloginfo( 'description', 'display' ); ?>
+		<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+	    <a class="navbar-brand" href="#">Carousel</a>
+	    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+	      <span class="navbar-toggler-icon"></span>
+	    </button>
 
-						<img src="" alt=" <?php echo $description; /* WPCS: xss ok. */ ?>">
+			<?php
+				wp_nav_menu( array(
+					'theme_location'  => 'menu-1',
+					'depth'           => 2, // 1 = no dropdowns, 2 = with dropdowns.
+					'container'       => 'div',
+					'container_class' => 'collapse navbar-collapse',
+					'container_id'    => 'bs-example-navbar-collapse-1',
+					'menu_class'      => 'navbar-nav mr-auto',
+					'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+					'walker'          => new WP_Bootstrap_Navwalker(),
+					) );
+				?>
 
-					</a>
-
-
-
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-
-					<?php wp_nav_menu( array(
-							'theme_location' => 'menu-1',
-							'menu_id' => 'navbar',
-							'menu_class' => 'navbar-collapse mainnav',
-							'items_wrap' => '<ul id="" class="nav navbar-nav navbar-right">%3$s</ul>' ) );
-							?>
-
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="../navbar/">Default</a></li>
-            <li class="active"><a href="./">Static top <span class="sr-only">(current)</span></a></li>
-            <li><a href="../navbar-fixed-top/">Fixed top</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
+				<form class="form-inline mt-2 mt-md-0">
+	        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+	        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+	      </form>
+	  </nav>
 
 	</header><!-- header -->
 
