@@ -9,56 +9,14 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-
-			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'starting-theme' ); ?></h1>
-				</header><!-- .page-header -->
-
-				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'starting-theme' ); ?></p>
-
-					<?php
-						get_search_form();
-
-						the_widget( 'WP_Widget_Recent_Posts' );
-
-						// Only show the widget if site has multiple categories.
-						if ( starting_theme_categorized_blog() ) :
-					?>
-
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'starting-theme' ); ?></h2>
-						<ul>
-						<?php
-							wp_list_categories( array(
-								'orderby'    => 'count',
-								'order'      => 'DESC',
-								'show_count' => 1,
-								'title_li'   => '',
-								'number'     => 10,
-							) );
-						?>
-						</ul>
-					</div><!-- .widget -->
-
-					<?php
-						endif;
-
-						/* translators: %1$s: smiley */
-						$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'starting-theme' ), convert_smilies( ':)' ) ) . '</p>';
-						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
-
-						the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
-
-				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
+<article class="page-404">
+	<div class="container page-404__container">
+		<img src="<?php echo get_template_directory_uri(); ?>/images/404.jpg" alt="Ohh! Page not found" loading="lazy">
+		<div class="page-404__title">Ohh! Page not found</div>
+		<div class="page-404__subtitle">You seem can’t to find the page you’re looking for</div>
+		<a class="page-404__btn" href="/">back to homepage</a>
+	</div>
+</article>
 
 <?php
 get_footer();
