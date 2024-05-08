@@ -1,13 +1,5 @@
 ( function($) {
 
-  /**
-   * Match Height (Including Safari onload fix)
-   */
-  function startMatchHeight() {
-    $('.matchheight').matchHeight();
-  }
-  window.onload = startMatchHeight;
-
   // fancybox
   $(document).ready(function() {
   		$(".fancybox").fancybox();
