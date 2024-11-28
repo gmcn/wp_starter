@@ -114,8 +114,8 @@ function starting_theme_scripts() {
 	wp_enqueue_script( 'swiper-js', get_template_directory_uri() . '/js/swiper-bundle.min.js', array(), '6.2.0', true );
 	wp_enqueue_script( 'functions-js', get_template_directory_uri() . '/js/functions.js', array(), '0.1', true );
 	wp_enqueue_script( 'wow-js', get_template_directory_uri() . '/js/wow.min.js', array(), '0.1', true );
-	wp_enqueue_script( 'popper-js', get_template_directory_uri() . '/js/popper.min.js', array(), '1.16.1', true );
-	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array(), '4.5.2', true );
+	wp_enqueue_script( 'popper-js', get_template_directory_uri() . '/js/popper.min.js', array(), '2.11.8', true );
+	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array(), '5.3.3', true );
 	wp_enqueue_script( 'starting-theme-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
