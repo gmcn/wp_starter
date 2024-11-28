@@ -7,26 +7,7 @@
 
 } ) (jQuery);
 
-window.cookieconsent.initialise({
-  "palette": {
-    "popup": {
-      "background": "#31404E",
-      "text": "#AAAEB2"
-    },
-    "button": {
-      "background": "#14191F"
-    }
-  },
-  "theme": "edgeless",
-  "position": "bottom",
-  "static": true,
-  "content": {
-    "message": "This site uses cookies. By continuing to browse the site, you are agreeing to our use of cookies.",
-    "dismiss": "Close This",
-    "link": "Find out more",
-    "href": "data-policy"
-  }
-});
+
 
 var mySwiper = new Swiper('.swiper-container', {
    // Optional parameters
@@ -49,3 +30,25 @@ var mySwiper = new Swiper('.swiper-container', {
      el: '.swiper-scrollbar',
    },
  })
+
+
+ window.cookieconsent.initialise({
+   "palette": {
+     "popup": {
+       "background": "#31404E",
+       "text": "#AAAEB2"
+     },
+     "button": {
+       "background": "#14191F"
+     }
+   },
+   "theme": "edgeless",
+   "position": "bottom",
+   "static": true,
+   "content": {
+     "message": "This site uses cookies. By continuing to browse the site, you are agreeing to our use of cookies.",
+     "dismiss": "Close This",
+     "link": "Find out more",
+     "href": "data-policy"
+   }
+ });
